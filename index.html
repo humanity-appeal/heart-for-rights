@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hope for Gaza - Children's Relief Fund</title>
+    <title>Heart for Rights - Gaza Children Relief Fund</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* CSS Variables for consistent theming */
@@ -82,6 +82,15 @@
             color: var(--primary-dark);
         }
         
+        .btn-donate {
+            background-color: var(--danger);
+            color: white;
+        }
+        
+        .btn-donate:hover {
+            background-color: #c82333;
+        }
+        
         .btn-large {
             padding: 15px 40px;
             font-size: 1.1rem;
@@ -144,10 +153,11 @@
         .nav-menu {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         .nav-menu li {
-            margin-left: 30px;
+            margin-left: 25px;
         }
         
         .nav-menu a {
@@ -167,7 +177,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1582213782119-d41d0753b00b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -195,36 +205,102 @@
             margin-top: 30px;
         }
         
-        /* Impact Section */
-        .impact-cards {
+        /* Emergency Section */
+        .emergency {
+            background-color: #fff8f8;
+            padding: 80px 0;
+        }
+        
+        .emergency-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
         }
         
-        .impact-card {
-            background-color: white;
+        .emergency-image {
             border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .impact-card:hover {
-            transform: translateY(-10px);
+        .emergency-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
-        .impact-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
+        .emergency-text h2 {
+            font-size: 2rem;
+            color: var(--danger);
             margin-bottom: 20px;
         }
         
-        .impact-card h3 {
+        .emergency-text h3 {
             font-size: 1.5rem;
-            margin-bottom: 15px;
+            color: var(--primary);
+            margin: 25px 0 15px;
+        }
+        
+        .famine-confirmed {
+            color: var(--danger) !important;
+        }
+        
+        .emergency-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--danger);
+            margin-bottom: 8px;
+        }
+        
+        .stat-text {
+            font-size: 0.85rem;
+            color: var(--dark);
+        }
+        
+        /* Emergency CTA Banner */
+        .emergency-cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/emergency-cta-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .emergency-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .emergency-cta h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .emergency-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         /* About Section */
@@ -398,12 +474,18 @@
             position: relative;
         }
         
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
         .testimonial {
             background-color: white;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin: 20px;
             text-align: center;
         }
         
@@ -482,7 +564,7 @@
         
         /* CTA Section */
         .cta {
-            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 68, 148, 0.9)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 68, 148, 0.9)), url('images/cta-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -578,12 +660,18 @@
                 font-size: 2.5rem;
             }
             
+            .emergency-content,
             .about-content {
                 grid-template-columns: 1fr;
             }
             
+            .emergency-image,
             .about-image {
                 order: -1;
+            }
+            
+            .emergency-stats {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -606,11 +694,13 @@
                 opacity: 0;
                 transition: all 0.3s ease;
                 z-index: 999;
+                display: none;
             }
             
             .nav-menu.active {
                 transform: translateY(0);
                 opacity: 1;
+                display: flex;
             }
             
             .nav-menu li {
@@ -630,6 +720,10 @@
             .donation-card.featured {
                 transform: scale(1);
             }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 576px) {
@@ -648,6 +742,14 @@
             .section-title h2 {
                 font-size: 1.8rem;
             }
+            
+            .emergency-text h2 {
+                font-size: 1.6rem;
+            }
+            
+            .emergency-cta h3 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -656,8 +758,10 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <i class="fas fa-hands-helping" style="color: #0056b3; font-size: 2rem;"></i>
-                <div class="logo-text">Hope for Gaza</div>
+                <!-- Option to use logo image - uncomment the line below and comment the icon line -->
+                <!-- <img src="images/logo.png" alt="Heart for Rights"> -->
+                <i class="fas fa-heart" style="color: #dc3545; font-size: 2rem;"></i>
+                <div class="logo-text">Heart for Rights</div>
             </div>
             <div class="mobile-toggle">
                 <i class="fas fa-bars"></i>
@@ -665,12 +769,9 @@
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#impact">Our Impact</a></li>
-                <li><a href="#donate">Donate</a></li>
-                <li><a href="#transparency">Transparency</a></li>
                 <li><a href="#partners">Partners</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="https://stripe.com" target="_blank" class="btn btn-donate">Donate</a></li>
             </ul>
         </div>
     </header>
@@ -681,7 +782,58 @@
             <h1>Emergency Relief for Gaza's Children</h1>
             <p>Thousands of children in Gaza are facing unimaginable hardships. Your donation can provide food, medical care, and hope for a better future.</p>
             <div class="hero-buttons">
-                <a href="#donate" class="btn btn-large btn-light">Donate Now</a>
+                <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Section -->
+    <section class="emergency" id="emergency">
+        <div class="container">
+            <div class="emergency-content">
+                <div class="emergency-text">
+                    <h2>Catastrophic Humanitarian Crisis in Gaza</h2>
+                    <p>Relentless conflict, the collapse of essential services and severe limitations on humanitarian assistance have created desperate conditions across the Gaza Strip.</p>
+                    
+                    <div class="emergency-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500,000+</div>
+                            <div class="stat-text">People facing catastrophic conditions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1M+</div>
+                            <div class="stat-text">Facing emergency food insecurity</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">132,000</div>
+                            <div class="stat-text">Children at risk of death</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2X</div>
+                            <div class="stat-text">Increase in malnutrition risk</div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="famine-confirmed">Famine Confirmed</h3>
+                    <p>Famine was confirmed in Gaza Governorate in August 2025 and is projected to expand to Deir al-Balah and Khan Younis governorates.</p>
+                    
+                    <h3>Our Response</h3>
+                    <p>Heart for Rights is scaling up emergency operations to reach 500,000 vulnerable people with life-saving aid over the next six months.</p>
+                </div>
+                <div class="emergency-image">
+                    <img src="images/emergency-situation.jpg" alt="Gaza Emergency Situation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency CTA Banner -->
+    <section class="emergency-cta">
+        <div class="container">
+            <div class="emergency-cta-content">
+                <h3>Urgent Action Needed Now</h3>
+                <p>Your immediate support can save lives and provide critical aid to children and families facing starvation.</p>
+                <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate to Save Lives</a>
             </div>
         </div>
     </section>
@@ -690,103 +842,110 @@
     <section class="section about" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Hope for Gaza</h2>
-                <p>Learn about our mission, vision, and the team behind our humanitarian efforts</p>
+                <h2>About Heart for Rights</h2>
+                <p>Established in 2020, we are dedicated to protecting human rights and providing humanitarian aid</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Our Mission</h3>
-                    <p>Hope for Gaza is a global humanitarian initiative dedicated to providing immediate and long-term assistance to children affected by the ongoing crisis in Gaza. Founded in 2023, we've mobilized resources from around the world to address the urgent needs of vulnerable children and families.</p>
-                    <p>We work with trusted local partners on the ground to ensure that aid reaches those who need it most, focusing on the most vulnerable - the children who represent the future of Palestine.</p>
+                    <p>Heart for Rights is a humanitarian organization dedicated to protecting human rights and providing emergency assistance to vulnerable populations worldwide. Since our founding in 2020, we've been at the forefront of crisis response.</p>
+                    <p>We work with trusted local partners to ensure aid reaches those who need it most, focusing on children and families affected by conflict and disaster.</p>
                     <h3>Our Vision</h3>
-                    <p>We envision a future where every child in Gaza has access to basic necessities, education, healthcare, and the opportunity to thrive despite challenging circumstances. Our programs are designed to address both immediate needs like food, medicine, and shelter, as well as long-term recovery through education and psychological support.</p>
+                    <p>We envision a world where every person has access to basic human rights, dignity, and the opportunity to thrive. Our programs address both immediate humanitarian needs and long-term recovery through sustainable development.</p>
                     <div class="section-cta">
-                        <a href="#donate" class="btn">Support Our Mission</a>
+                        <a href="#contact" class="btn">Contact Us</a>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Children in Gaza">
+                    <img src="images/about-us.jpg" alt="Heart for Rights Team">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
-    <section class="section" id="impact">
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <h2 class="partners-title">Our Trusted Partners</h2>
+            <div class="partners-scroll">
+                <div class="partners-track">
+                    <div class="partner-logo">
+                        <img src="images/partner-unicef.png" alt="UNICEF">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-red-cross.png" alt="Red Cross">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-who.png" alt="WHO">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-unrwa.png" alt="UNRWA">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-save-children.png" alt="Save the Children">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-oxfam.png" alt="Oxfam">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-doctors-without-borders.png" alt="Doctors Without Borders">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-cares.png" alt="CARE">
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="partner-logo">
+                        <img src="images/partner-unicef.png" alt="UNICEF">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-red-cross.png" alt="Red Cross">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-who.png" alt="WHO">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-unrwa.png" alt="UNRWA">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-save-children.png" alt="Save the Children">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-oxfam.png" alt="Oxfam">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-doctors-without-borders.png" alt="Doctors Without Borders">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="images/partner-cares.png" alt="CARE">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
         <div class="container">
             <div class="section-title">
-                <h2>Your Impact</h2>
-                <p>Every donation makes a tangible difference in the lives of children affected by the crisis in Gaza.</p>
+                <h2>Donor Stories</h2>
+                <p>Hear from people around the world who have supported our mission.</p>
             </div>
-            <div class="impact-cards">
-                <div class="impact-card">
-                    <div class="impact-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Food & Nutrition</h3>
-                    <p>Provide nutritious meals to malnourished children and families in crisis.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">I was hesitant at first, but after seeing the detailed reports of how my donation was used, I feel confident supporting this cause. Knowing that children are receiving food and medical care because of my contribution is incredibly rewarding.</p>
+                    <p class="testimonial-author">- Sarah Johnson, UK</p>
                 </div>
-                <div class="impact-card">
-                    <div class="impact-icon">
-                        <i class="fas fa-stethoscope"></i>
-                    </div>
-                    <h3>Medical Care</h3>
-                    <p>Deliver essential medical supplies and healthcare services to injured children.</p>
+                <div class="testimonial">
+                    <p class="testimonial-text">As a pediatrician, I understand the critical importance of nutrition for child development. Heart for Rights is doing essential work in Gaza, and I'm proud to support their efforts to save children's lives.</p>
+                    <p class="testimonial-author">- Dr. Michael Chen, USA</p>
                 </div>
-                <div class="impact-card">
-                    <div class="impact-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>Shelter & Safety</h3>
-                    <p>Offer safe spaces and temporary shelters for displaced families.</p>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Education</h3>
-                    <p>Support educational programs and psychological support for traumatized children.</p>
+                <div class="testimonial">
+                    <p class="testimonial-text">The transparency and regular updates from Heart for Rights give me confidence that my donations are making a real difference. I've been a monthly donor for over a year and will continue supporting their vital work.</p>
+                    <p class="testimonial-author">- Emma Rodriguez, Canada</p>
                 </div>
             </div>
             <div class="section-cta">
-                <a href="#donate" class="btn">Make an Impact Today</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Donation Section -->
-    <section class="section" id="donate">
-        <div class="container">
-            <div class="section-title">
-                <h2>Make a Difference Today</h2>
-                <p>Choose an amount to donate and help provide critical aid to children in Gaza.</p>
-            </div>
-            <div class="donation-options">
-                <div class="donation-card">
-                    <h3>Emergency Food</h3>
-                    <div class="donation-amount">$50</div>
-                    <p class="donation-description">Provides a family with essential food supplies for two weeks.</p>
-                    <button class="btn">Donate Now</button>
-                </div>
-                <div class="donation-card featured">
-                    <h3>Medical Kit</h3>
-                    <div class="donation-amount">$100</div>
-                    <p class="donation-description">Supplies a medical kit to treat injured children.</p>
-                    <button class="btn">Donate Now</button>
-                </div>
-                <div class="donation-card">
-                    <h3>Education Support</h3>
-                    <div class="donation-amount">$250</div>
-                    <p class="donation-description">Funds educational materials and psychological support for 10 children.</p>
-                    <button class="btn">Donate Now</button>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <p>Or enter a custom amount:</p>
-                <div style="display: flex; justify-content: center; margin-top: 20px;">
-                    <input type="number" placeholder="Enter amount" style="padding: 12px; border: 1px solid #ddd; border-radius: 4px 0 0 4px; width: 200px;">
-                    <button class="btn" style="border-radius: 0 4px 4px 0;">Donate</button>
-                </div>
+                <a href="https://stripe.com" target="_blank" class="btn">Join Our Supporters</a>
             </div>
         </div>
     </section>
@@ -821,121 +980,6 @@
                     <p>All our local partners are thoroughly vetted to ensure aid reaches those in need.</p>
                 </div>
             </div>
-            <div class="section-cta">
-                <a href="#faq" class="btn btn-secondary">Learn More About Our Process</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section class="partners" id="partners">
-        <div class="container">
-            <h2 class="partners-title">Our Trusted Partners</h2>
-            <div class="partners-scroll">
-                <div class="partners-track">
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/UNICEF_Logo.svg/2560px-UNICEF_Logo.svg.png" alt="UNICEF">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/International_Committee_of_the_Red_Cross_%28ICRC%29.svg/2560px-International_Committee_of_the_Red_Cross_%28ICRC%29.svg.png" alt="Red Cross">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/World_Health_Organization_Logo.svg/2560px-World_Health_Organization_Logo.svg.png" alt="WHO">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/UNRWA_Logo.svg/1200px-UNRWA_Logo.svg.png" alt="UNRWA">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Save_the_Children_logo.svg/2560px-Save_the_Children_logo.svg.png" alt="Save the Children">
-                    </div>
-                    <!-- Duplicate for seamless loop -->
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/UNICEF_Logo.svg/2560px-UNICEF_Logo.svg.png" alt="UNICEF">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/International_Committee_of_the_Red_Cross_%28ICRC%29.svg/2560px-International_Committee_of_the_Red_Cross_%28ICRC%29.svg.png" alt="Red Cross">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/World_Health_Organization_Logo.svg/2560px-World_Health_Organization_Logo.svg.png" alt="WHO">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/UNRWA_Logo.svg/1200px-UNRWA_Logo.svg.png" alt="UNRWA">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Save_the_Children_logo.svg/2560px-Save_the_Children_logo.svg.png" alt="Save the Children">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Donor Stories</h2>
-                <p>Hear from people around the world who have supported our mission.</p>
-            </div>
-            <div class="testimonials-container">
-                <div class="testimonial">
-                    <p class="testimonial-text">I was hesitant at first, but after seeing the detailed reports of how my donation was used, I feel confident supporting this cause. Knowing that children are receiving food and medical care because of my contribution is incredibly rewarding.</p>
-                    <p class="testimonial-author">- Sarah Johnson, UK</p>
-                </div>
-            </div>
-            <div class="section-cta">
-                <a href="#donate" class="btn">Join Our Supporters</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section" id="faq">
-        <div class="container">
-            <div class="section-title">
-                <h2>Frequently Asked Questions</h2>
-                <p>Find answers to common questions about our work and donations.</p>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How will my donation be used?
-                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>90% of your donation goes directly to aid programs in Gaza, including food, medical supplies, shelter, and education. Only 10% is used for administrative costs to ensure efficient operation of our organization.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Is my donation tax-deductible?
-                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, Hope for Gaza is a registered 501(c)(3) nonprofit organization in the United States, and donations are tax-deductible to the extent allowed by law. For donors in European countries, we provide documentation for tax purposes according to local regulations.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How do you ensure aid reaches those in need?
-                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We work exclusively with vetted local partners who have extensive experience and networks in Gaza. All distributions are documented with photos and reports, and we conduct regular audits to ensure accountability.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Can I set up recurring donations?
-                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer monthly recurring donation options that provide sustained support for our programs. Recurring donations help us plan ahead and provide consistent aid to children in need.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="section-cta">
-                <a href="#contact" class="btn">Still Have Questions? Contact Us</a>
-            </div>
         </div>
     </section>
 
@@ -944,7 +988,7 @@
         <div class="container">
             <h2>Time is Critical for Gaza's Children</h2>
             <p>Your donation today can save lives and provide hope for a better tomorrow. Join thousands of donors worldwide in making a difference.</p>
-            <a href="#donate" class="btn btn-large btn-light">Donate Now</a>
+            <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate Now</a>
         </div>
     </section>
 
@@ -953,12 +997,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Hope for Gaza</h3>
-                    <p>Providing emergency relief and long-term support to children affected by the crisis in Gaza.</p>
+                    <h3>Heart for Rights</h3>
+                    <p>Protecting human rights and providing humanitarian aid since 2020.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/HeartforRights" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/heartforrights" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -967,19 +1011,17 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#impact">Our Impact</a></li>
-                        <li><a href="#donate">Donate</a></li>
-                        <li><a href="#transparency">Transparency</a></li>
                         <li><a href="#partners">Partners</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="https://stripe.com" target="_blank">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> info@hopeforgaza.org</li>
+                        <li><i class="fas fa-envelope"></i> info@heartforrights.org</li>
                         <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Global Relief Center, New York, NY</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 39 Spring St, New York, NY 10012, USA</li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -992,15 +1034,35 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Hope for Gaza. All rights reserved. | Registered 501(c)(3) nonprofit organization</p>
+                <p>&copy; 2023 Heart for Rights. All rights reserved. | Established 2020</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Mobile Navigation Toggle - Fixed
         document.querySelector('.mobile-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+            
+            // Toggle icon
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.mobile-toggle i').classList.remove('fa-times');
+                document.querySelector('.mobile-toggle i').classList.add('fa-bars');
+            });
         });
 
         // FAQ Accordion
@@ -1025,9 +1087,6 @@
                         top: targetElement.offsetTop - 70,
                         behavior: 'smooth'
                     });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('.nav-menu').classList.remove('active');
                 }
             });
         });
@@ -1040,23 +1099,6 @@
             } else {
                 header.style.backgroundColor = 'white';
             }
-        });
-
-        // Facebook data integration (placeholder)
-        // In a real implementation, you would use the Facebook Graph API
-        // This is a simplified example
-        function fetchFacebookData() {
-            // This would be replaced with actual API calls
-            console.log("Fetching data from Facebook page: HeartforRights");
-            // Example of data that could be fetched:
-            // - Recent posts
-            // - Number of followers
-            // - Campaign updates
-        }
-
-        // Initialize Facebook data on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            fetchFacebookData();
         });
     </script>
 </body>
