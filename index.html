@@ -72,6 +72,16 @@
             background-color: #218838;
         }
         
+        .btn-light {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        .btn-light:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-dark);
+        }
+        
         .btn-large {
             padding: 15px 40px;
             font-size: 1.1rem;
@@ -157,7 +167,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 68, 148, 0.8)), url('https://images.unsplash.com/photo-1582213782119-d41d0753b00b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1582213782119-d41d0753b00b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -324,6 +334,61 @@
         .transparency-item h3 {
             margin-bottom: 15px;
             color: var(--primary);
+        }
+        
+        /* Partners Section */
+        .partners {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .partners-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+        
+        .partners-scroll {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .partners-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .partner-logo {
+            flex: 0 0 auto;
+            margin: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px;
+        }
+        
+        .partner-logo img {
+            max-height: 60px;
+            max-width: 150px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .partner-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
         
         /* Testimonials */
@@ -502,6 +567,11 @@
             font-size: 0.9rem;
         }
         
+        .section-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
@@ -594,10 +664,11 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#impact">Impact</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#impact">Our Impact</a></li>
                 <li><a href="#donate">Donate</a></li>
                 <li><a href="#transparency">Transparency</a></li>
+                <li><a href="#partners">Partners</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -610,8 +681,32 @@
             <h1>Emergency Relief for Gaza's Children</h1>
             <p>Thousands of children in Gaza are facing unimaginable hardships. Your donation can provide food, medical care, and hope for a better future.</p>
             <div class="hero-buttons">
-                <a href="#donate" class="btn btn-large">Donate Now</a>
-                <a href="#about" class="btn btn-secondary btn-large">Learn More</a>
+                <a href="#donate" class="btn btn-large btn-light">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Hope for Gaza</h2>
+                <p>Learn about our mission, vision, and the team behind our humanitarian efforts</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>Hope for Gaza is a global humanitarian initiative dedicated to providing immediate and long-term assistance to children affected by the ongoing crisis in Gaza. Founded in 2023, we've mobilized resources from around the world to address the urgent needs of vulnerable children and families.</p>
+                    <p>We work with trusted local partners on the ground to ensure that aid reaches those who need it most, focusing on the most vulnerable - the children who represent the future of Palestine.</p>
+                    <h3>Our Vision</h3>
+                    <p>We envision a future where every child in Gaza has access to basic necessities, education, healthcare, and the opportunity to thrive despite challenging circumstances. Our programs are designed to address both immediate needs like food, medicine, and shelter, as well as long-term recovery through education and psychological support.</p>
+                    <div class="section-cta">
+                        <a href="#donate" class="btn">Support Our Mission</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Children in Gaza">
+                </div>
             </div>
         </div>
     </section>
@@ -653,23 +748,8 @@
                     <p>Support educational programs and psychological support for traumatized children.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Our Mission</h3>
-                    <p>Hope for Gaza is a global humanitarian initiative dedicated to providing immediate and long-term assistance to children affected by the ongoing crisis in Gaza.</p>
-                    <p>We work with trusted local partners on the ground to ensure that aid reaches those who need it most, focusing on the most vulnerable - the children.</p>
-                    <p>Our programs are designed to address both immediate needs like food, medicine, and shelter, as well as long-term recovery through education and psychological support.</p>
-                    <a href="#donate" class="btn">Support Our Mission</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Children in Gaza">
-                </div>
+            <div class="section-cta">
+                <a href="#donate" class="btn">Make an Impact Today</a>
             </div>
         </div>
     </section>
@@ -741,6 +821,51 @@
                     <p>All our local partners are thoroughly vetted to ensure aid reaches those in need.</p>
                 </div>
             </div>
+            <div class="section-cta">
+                <a href="#faq" class="btn btn-secondary">Learn More About Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <h2 class="partners-title">Our Trusted Partners</h2>
+            <div class="partners-scroll">
+                <div class="partners-track">
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/UNICEF_Logo.svg/2560px-UNICEF_Logo.svg.png" alt="UNICEF">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/International_Committee_of_the_Red_Cross_%28ICRC%29.svg/2560px-International_Committee_of_the_Red_Cross_%28ICRC%29.svg.png" alt="Red Cross">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/World_Health_Organization_Logo.svg/2560px-World_Health_Organization_Logo.svg.png" alt="WHO">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/UNRWA_Logo.svg/1200px-UNRWA_Logo.svg.png" alt="UNRWA">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Save_the_Children_logo.svg/2560px-Save_the_Children_logo.svg.png" alt="Save the Children">
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/UNICEF_Logo.svg/2560px-UNICEF_Logo.svg.png" alt="UNICEF">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/International_Committee_of_the_Red_Cross_%28ICRC%29.svg/2560px-International_Committee_of_the_Red_Cross_%28ICRC%29.svg.png" alt="Red Cross">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/World_Health_Organization_Logo.svg/2560px-World_Health_Organization_Logo.svg.png" alt="WHO">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/UNRWA_Logo.svg/1200px-UNRWA_Logo.svg.png" alt="UNRWA">
+                    </div>
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Save_the_Children_logo.svg/2560px-Save_the_Children_logo.svg.png" alt="Save the Children">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -756,6 +881,9 @@
                     <p class="testimonial-text">I was hesitant at first, but after seeing the detailed reports of how my donation was used, I feel confident supporting this cause. Knowing that children are receiving food and medical care because of my contribution is incredibly rewarding.</p>
                     <p class="testimonial-author">- Sarah Johnson, UK</p>
                 </div>
+            </div>
+            <div class="section-cta">
+                <a href="#donate" class="btn">Join Our Supporters</a>
             </div>
         </div>
     </section>
@@ -805,6 +933,9 @@
                     </div>
                 </div>
             </div>
+            <div class="section-cta">
+                <a href="#contact" class="btn">Still Have Questions? Contact Us</a>
+            </div>
         </div>
     </section>
 
@@ -813,7 +944,7 @@
         <div class="container">
             <h2>Time is Critical for Gaza's Children</h2>
             <p>Your donation today can save lives and provide hope for a better tomorrow. Join thousands of donors worldwide in making a difference.</p>
-            <a href="#donate" class="btn btn-large">Donate Now</a>
+            <a href="#donate" class="btn btn-large btn-light">Donate Now</a>
         </div>
     </section>
 
@@ -825,7 +956,7 @@
                     <h3>Hope for Gaza</h3>
                     <p>Providing emergency relief and long-term support to children affected by the crisis in Gaza.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/HeartforRights" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -839,6 +970,8 @@
                         <li><a href="#impact">Our Impact</a></li>
                         <li><a href="#donate">Donate</a></li>
                         <li><a href="#transparency">Transparency</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -907,6 +1040,23 @@
             } else {
                 header.style.backgroundColor = 'white';
             }
+        });
+
+        // Facebook data integration (placeholder)
+        // In a real implementation, you would use the Facebook Graph API
+        // This is a simplified example
+        function fetchFacebookData() {
+            // This would be replaced with actual API calls
+            console.log("Fetching data from Facebook page: HeartforRights");
+            // Example of data that could be fetched:
+            // - Recent posts
+            // - Number of followers
+            // - Campaign updates
+        }
+
+        // Initialize Facebook data on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchFacebookData();
         });
     </script>
 </body>
