@@ -281,7 +281,6 @@
             color: white;
             padding: 60px 0;
             text-align: center;
-            margin: 40px 0;
         }
         
         .emergency-cta-content {
@@ -301,6 +300,102 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+        
+        /* Impact Section */
+        .impact {
+            background-color: var(--light);
+        }
+        
+        .impact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .impact-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .impact-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .impact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Donation Options Section */
+        .donation-options {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .donation-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .donation-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s ease;
+        }
+        
+        .donation-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .donation-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+            position: relative;
+        }
+        
+        .donation-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .donation-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+        
+        .donation-description {
+            margin-bottom: 25px;
+            color: var(--gray);
+            min-height: 60px;
         }
         
         /* About Section */
@@ -335,81 +430,6 @@
         
         .about-text p {
             margin-bottom: 20px;
-        }
-        
-        /* Donation Section */
-        .donation-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .donation-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border: 1px solid #e9ecef;
-        }
-        
-        .donation-card.featured {
-            border: 2px solid var(--primary);
-            transform: scale(1.05);
-            position: relative;
-        }
-        
-        .donation-card.featured::before {
-            content: "Most Popular";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--primary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .donation-amount {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 20px 0;
-        }
-        
-        .donation-description {
-            margin-bottom: 25px;
-            color: var(--gray);
-        }
-        
-        /* Transparency Section */
-        .transparency {
-            background-color: var(--light);
-        }
-        
-        .transparency-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .transparency-item {
-            text-align: center;
-        }
-        
-        .transparency-icon {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .transparency-item h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
         }
         
         /* Partners Section */
@@ -467,7 +487,37 @@
             }
         }
         
+        /* Transparency Section */
+        .transparency {
+            background-color: var(--light);
+        }
+        
+        .transparency-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .transparency-item {
+            text-align: center;
+        }
+        
+        .transparency-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .transparency-item h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
         /* Testimonials */
+        .testimonials {
+            background-color: white;
+        }
+        
         .testimonials-container {
             max-width: 800px;
             margin: 0 auto;
@@ -520,6 +570,10 @@
         }
         
         /* FAQ Section */
+        .faq {
+            background-color: var(--light);
+        }
+        
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
@@ -673,6 +727,10 @@
             .emergency-stats {
                 grid-template-columns: 1fr;
             }
+            
+            .donation-card.featured {
+                transform: scale(1);
+            }
         }
         
         @media (max-width: 768px) {
@@ -717,11 +775,11 @@
                 max-width: 300px;
             }
             
-            .donation-card.featured {
-                transform: scale(1);
+            .testimonials-grid {
+                grid-template-columns: 1fr;
             }
             
-            .testimonials-grid {
+            .donation-cards {
                 grid-template-columns: 1fr;
             }
         }
@@ -816,9 +874,6 @@
                     
                     <h3 class="famine-confirmed">Famine Confirmed</h3>
                     <p>Famine was confirmed in Gaza Governorate in August 2025 and is projected to expand to Deir al-Balah and Khan Younis governorates.</p>
-                    
-                    <h3>Our Response</h3>
-                    <p>Heart for Rights is scaling up emergency operations to reach 500,000 vulnerable people with life-saving aid over the next six months.</p>
                 </div>
                 <div class="emergency-image">
                     <img src="images/emergency-situation.jpg" alt="Gaza Emergency Situation">
@@ -834,6 +889,89 @@
                 <h3>Urgent Action Needed Now</h3>
                 <p>Your immediate support can save lives and provide critical aid to children and families facing starvation.</p>
                 <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate to Save Lives</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Your Impact</h2>
+                <p>Every donation makes a tangible difference in the lives of children affected by the crisis in Gaza.</p>
+            </div>
+            <div class="impact-cards">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Food & Nutrition</h3>
+                    <p>Provide nutritious meals to malnourished children and families in crisis.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Medical Care</h3>
+                    <p>Deliver essential medical supplies and healthcare services to injured children.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Shelter & Safety</h3>
+                    <p>Offer safe spaces and temporary shelters for displaced families.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Support educational programs and psychological support for traumatized children.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options Section -->
+    <section class="donation-options">
+        <div class="container">
+            <div class="section-title">
+                <h2>Make a Difference Today</h2>
+                <p>Choose an amount to donate and help provide critical aid to children in Gaza.</p>
+            </div>
+            <div class="donation-cards">
+                <div class="donation-card">
+                    <h3>Emergency Food</h3>
+                    <div class="donation-amount">$50</div>
+                    <p class="donation-description">Provides a family with essential food supplies for two weeks.</p>
+                    <a href="https://stripe.com" target="_blank" class="btn">Donate Now</a>
+                </div>
+                <div class="donation-card featured">
+                    <h3>Medical Kit</h3>
+                    <div class="donation-amount">$100</div>
+                    <p class="donation-description">Supplies a medical kit to treat injured children.</p>
+                    <a href="https://stripe.com" target="_blank" class="btn">Donate Now</a>
+                </div>
+                <div class="donation-card">
+                    <h3>Education Support</h3>
+                    <div class="donation-amount">$250</div>
+                    <p class="donation-description">Funds educational materials and psychological support for 10 children.</p>
+                    <a href="https://stripe.com" target="_blank" class="btn">Donate Now</a>
+                </div>
+                <div class="donation-card">
+                    <h3>Family Shelter</h3>
+                    <div class="donation-amount">$500</div>
+                    <p class="donation-description">Provides temporary shelter and basic necessities for a displaced family.</p>
+                    <a href="https://stripe.com" target="_blank" class="btn">Donate Now</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <p>Or enter a custom amount:</p>
+                <div style="display: flex; justify-content: center; margin-top: 20px;">
+                    <input type="number" placeholder="Enter amount" style="padding: 12px; border: 1px solid #ddd; border-radius: 4px 0 0 4px; width: 200px;">
+                    <a href="https://stripe.com" target="_blank" class="btn" style="border-radius: 0 4px 4px 0;">Donate</a>
+                </div>
             </div>
         </div>
     </section>
@@ -923,33 +1061,6 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Donor Stories</h2>
-                <p>Hear from people around the world who have supported our mission.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">I was hesitant at first, but after seeing the detailed reports of how my donation was used, I feel confident supporting this cause. Knowing that children are receiving food and medical care because of my contribution is incredibly rewarding.</p>
-                    <p class="testimonial-author">- Sarah Johnson, UK</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">As a pediatrician, I understand the critical importance of nutrition for child development. Heart for Rights is doing essential work in Gaza, and I'm proud to support their efforts to save children's lives.</p>
-                    <p class="testimonial-author">- Dr. Michael Chen, USA</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">The transparency and regular updates from Heart for Rights give me confidence that my donations are making a real difference. I've been a monthly donor for over a year and will continue supporting their vital work.</p>
-                    <p class="testimonial-author">- Emma Rodriguez, Canada</p>
-                </div>
-            </div>
-            <div class="section-cta">
-                <a href="https://stripe.com" target="_blank" class="btn">Join Our Supporters</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Transparency Section -->
     <section class="section transparency" id="transparency">
         <div class="container">
@@ -978,6 +1089,81 @@
                     </div>
                     <h3>Verified Partners</h3>
                     <p>All our local partners are thoroughly vetted to ensure aid reaches those in need.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Donor Stories</h2>
+                <p>Hear from people around the world who have supported our mission.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">I was hesitant at first, but after seeing the detailed reports of how my donation was used, I feel confident supporting this cause. Knowing that children are receiving food and medical care because of my contribution is incredibly rewarding.</p>
+                    <p class="testimonial-author">- Sarah Johnson, UK</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">As a pediatrician, I understand the critical importance of nutrition for child development. Heart for Rights is doing essential work in Gaza, and I'm proud to support their efforts to save children's lives.</p>
+                    <p class="testimonial-author">- Dr. Michael Chen, USA</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">The transparency and regular updates from Heart for Rights give me confidence that my donations are making a real difference. I've been a monthly donor for over a year and will continue supporting their vital work.</p>
+                    <p class="testimonial-author">- Emma Rodriguez, Canada</p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="https://stripe.com" target="_blank" class="btn">Join Our Supporters</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our work and donations.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How will my donation be used?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>90% of your donation goes directly to aid programs in Gaza, including food, medical supplies, shelter, and education. Only 10% is used for administrative costs to ensure efficient operation of our organization.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is my donation tax-deductible?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Heart for Rights is a registered 501(c)(3) nonprofit organization in the United States, and donations are tax-deductible to the extent allowed by law. For donors in European countries, we provide documentation for tax purposes according to local regulations.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do you ensure aid reaches those in need?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We work exclusively with vetted local partners who have extensive experience and networks in Gaza. All distributions are documented with photos and reports, and we conduct regular audits to ensure accountability.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I set up recurring donations?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer monthly recurring donation options that provide sustained support for our programs. Recurring donations help us plan ahead and provide consistent aid to children in need.</p>
+                    </div>
                 </div>
             </div>
         </div>
