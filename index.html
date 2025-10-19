@@ -175,27 +175,37 @@
             cursor: pointer;
         }
         
-        /* Hero Section */
+        /* Hero Section - Increased Height */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             color: white;
             text-align: center;
-            padding: 180px 0 100px;
+            padding: 220px 0 120px;
             margin-top: 70px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            width: 100%;
         }
         
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 25px;
             line-height: 1.2;
+            font-weight: 700;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
         }
         
         .hero-buttons {
@@ -205,16 +215,36 @@
             margin-top: 30px;
         }
         
-        /* Emergency Section */
+        /* Emergency Section - Updated Layout */
         .emergency {
             background-color: #fff8f8;
             padding: 80px 0;
         }
         
+        .emergency-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .emergency-header h2 {
+            font-size: 2.5rem;
+            color: var(--danger);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .emergency-header p {
+            font-size: 1.2rem;
+            color: var(--dark);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
         .emergency-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
         
@@ -230,14 +260,8 @@
             display: block;
         }
         
-        .emergency-text h2 {
-            font-size: 2rem;
-            color: var(--danger);
-            margin-bottom: 20px;
-        }
-        
         .emergency-text h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary);
             margin: 25px 0 15px;
         }
@@ -273,13 +297,14 @@
             color: var(--dark);
         }
         
-        /* Emergency CTA Banner */
+        /* Emergency CTA Banner - More Transparent */
         .emergency-cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/emergency-cta-bg.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/emergency-cta-bg.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
         }
         
@@ -289,17 +314,18 @@
         }
         
         .emergency-cta h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 25px;
             font-weight: 700;
         }
         
         .emergency-cta p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            max-width: 600px;
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
         
         /* Impact Section */
@@ -616,25 +642,28 @@
             transform: rotate(180deg);
         }
         
-        /* CTA Section */
+        /* CTA Section - More Transparent */
         .cta {
-            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 68, 148, 0.9)), url('images/cta-bg.jpg');
+            background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 68, 148, 0.7)), url('images/cta-bg.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             color: white;
             text-align: center;
-            padding: 100px 0;
+            padding: 120px 0;
         }
         
         .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
         
         .cta p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
         }
         
         /* Footer */
@@ -711,7 +740,7 @@
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .emergency-content,
@@ -765,6 +794,19 @@
                 margin: 10px 0;
             }
             
+            .hero {
+                padding: 180px 0 100px;
+                min-height: 80vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -782,15 +824,28 @@
             .donation-cards {
                 grid-template-columns: 1fr;
             }
+            
+            .emergency-header h2 {
+                font-size: 2rem;
+            }
+            
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta p {
+                font-size: 1.1rem;
+            }
         }
         
         @media (max-width: 576px) {
             .hero {
-                padding: 150px 0 80px;
+                padding: 160px 0 80px;
+                min-height: 70vh;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .section {
@@ -801,12 +856,20 @@
                 font-size: 1.8rem;
             }
             
-            .emergency-text h2 {
-                font-size: 1.6rem;
+            .emergency-header h2 {
+                font-size: 1.8rem;
             }
             
             .emergency-cta h3 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+            
+            .cta {
+                padding: 80px 0;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -837,22 +900,25 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Emergency Relief for Gaza's Children</h1>
-            <p>Thousands of children in Gaza are facing unimaginable hardships. Your donation can provide food, medical care, and hope for a better future.</p>
-            <div class="hero-buttons">
-                <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate Now</a>
+            <div class="hero-content">
+                <h1>Emergency Relief for Gaza's Children</h1>
+                <p>Thousands of children in Gaza are facing unimaginable hardships. Your donation can provide food, medical care, and hope for a better future.</p>
+                <div class="hero-buttons">
+                    <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate Now</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Emergency Section -->
+    <!-- Emergency Section - Updated Layout -->
     <section class="emergency" id="emergency">
         <div class="container">
+            <div class="emergency-header">
+                <h2>Catastrophic Humanitarian Crisis in Gaza</h2>
+                <p>Relentless conflict, the collapse of essential services and severe limitations on humanitarian assistance have created desperate conditions across the Gaza Strip.</p>
+            </div>
             <div class="emergency-content">
                 <div class="emergency-text">
-                    <h2>Catastrophic Humanitarian Crisis in Gaza</h2>
-                    <p>Relentless conflict, the collapse of essential services and severe limitations on humanitarian assistance have created desperate conditions across the Gaza Strip.</p>
-                    
                     <div class="emergency-stats">
                         <div class="stat-item">
                             <div class="stat-number">500,000+</div>
@@ -882,7 +948,7 @@
         </div>
     </section>
 
-    <!-- Emergency CTA Banner -->
+    <!-- Emergency CTA Banner - More Transparent -->
     <section class="emergency-cta">
         <div class="container">
             <div class="emergency-cta-content">
@@ -1169,7 +1235,7 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA Section - More Transparent -->
     <section class="cta">
         <div class="container">
             <h2>Time is Critical for Gaza's Children</h2>
