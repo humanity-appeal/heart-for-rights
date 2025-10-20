@@ -82,15 +82,6 @@
             color: var(--primary-dark);
         }
         
-        .btn-donate {
-            background-color: var(--danger);
-            color: white;
-        }
-        
-        .btn-donate:hover {
-            background-color: #c82333;
-        }
-        
         .btn-large {
             padding: 15px 40px;
             font-size: 1.1rem;
@@ -173,6 +164,37 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+        }
+        
+        /* Sticky Donate Button */
+        .sticky-donate {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        .sticky-donate .btn {
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            }
         }
         
         /* Hero Section - Increased Height */
@@ -456,6 +478,20 @@
         
         .about-text p {
             margin-bottom: 20px;
+        }
+        
+        .legal-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin: 25px 0;
+        }
+        
+        .legal-info h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
         }
         
         /* Partners Section */
@@ -760,6 +796,11 @@
             .donation-card.featured {
                 transform: scale(1);
             }
+            
+            .sticky-donate {
+                bottom: 20px;
+                right: 20px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -836,6 +877,11 @@
             .cta p {
                 font-size: 1.1rem;
             }
+            
+            .sticky-donate .btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -871,6 +917,11 @@
             .cta h2 {
                 font-size: 2rem;
             }
+            
+            .sticky-donate {
+                bottom: 15px;
+                right: 15px;
+            }
         }
     </style>
 </head>
@@ -879,9 +930,8 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <!-- Option to use logo image - uncomment the line below and comment the icon line -->
-                <!-- <img src="images/logo.png" alt="Heart for Rights"> -->
-                <i class="fas fa-heart" style="color: #dc3545; font-size: 2rem;"></i>
+                <!-- Logo image - uncomment when you have the logo file -->
+                <img src="images/logo.png" alt="Heart for Rights" onerror="this.style.display='none'">
                 <div class="logo-text">Heart for Rights</div>
             </div>
             <div class="mobile-toggle">
@@ -892,10 +942,15 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#partners">Partners</a></li>
                 <li><a href="#contact">Contact Us</a></li>
-                <li><a href="https://stripe.com" target="_blank" class="btn btn-donate">Donate</a></li>
+                <li><a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn">Donate</a></li>
             </ul>
         </div>
     </header>
+
+    <!-- Sticky Donate Button -->
+    <div class="sticky-donate">
+        <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large">Donate Now</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -904,7 +959,7 @@
                 <h1>Emergency Relief for Gaza's Children</h1>
                 <p>Thousands of children in Gaza are facing unimaginable hardships. Your donation can provide food, medical care, and hope for a better future.</p>
                 <div class="hero-buttons">
-                    <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate Now</a>
+                    <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large btn-light">Donate Now</a>
                 </div>
             </div>
         </div>
@@ -954,7 +1009,7 @@
             <div class="emergency-cta-content">
                 <h3>Urgent Action Needed Now</h3>
                 <p>Your immediate support can save lives and provide critical aid to children and families facing starvation.</p>
-                <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate to Save Lives</a>
+                <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large btn-light">Donate to Save Lives</a>
             </div>
         </div>
     </section>
@@ -1011,32 +1066,25 @@
                     <h3>Emergency Food</h3>
                     <div class="donation-amount">$50</div>
                     <p class="donation-description">Provides a family with essential food supplies for two weeks.</p>
-                    <a href="https://stripe.com" target="_blank" class="btn">Donate Now</a>
+                    <button class="btn">Donate Now</button>
                 </div>
                 <div class="donation-card featured">
                     <h3>Medical Kit</h3>
                     <div class="donation-amount">$100</div>
                     <p class="donation-description">Supplies a medical kit to treat injured children.</p>
-                    <a href="https://stripe.com" target="_blank" class="btn">Donate Now</a>
+                    <button class="btn">Donate Now</button>
                 </div>
                 <div class="donation-card">
                     <h3>Education Support</h3>
                     <div class="donation-amount">$250</div>
                     <p class="donation-description">Funds educational materials and psychological support for 10 children.</p>
-                    <a href="https://stripe.com" target="_blank" class="btn">Donate Now</a>
-                </div>
-                <div class="donation-card">
-                    <h3>Family Shelter</h3>
-                    <div class="donation-amount">$500</div>
-                    <p class="donation-description">Provides temporary shelter and basic necessities for a displaced family.</p>
-                    <a href="https://stripe.com" target="_blank" class="btn">Donate Now</a>
+                    <button class="btn">Donate Now</button>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <p>Or enter a custom amount:</p>
-                <div style="display: flex; justify-content: center; margin-top: 20px;">
-                    <input type="number" placeholder="Enter amount" style="padding: 12px; border: 1px solid #ddd; border-radius: 4px 0 0 4px; width: 200px;">
-                    <a href="https://stripe.com" target="_blank" class="btn" style="border-radius: 0 4px 4px 0;">Donate</a>
+                <p>Or make a custom donation:</p>
+                <div style="margin-top: 20px;">
+                    <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large">Make a Custom Donation</a>
                 </div>
             </div>
         </div>
@@ -1054,6 +1102,13 @@
                     <h3>Our Mission</h3>
                     <p>Heart for Rights is a humanitarian organization dedicated to protecting human rights and providing emergency assistance to vulnerable populations worldwide. Since our founding in 2020, we've been at the forefront of crisis response.</p>
                     <p>We work with trusted local partners to ensure aid reaches those who need it most, focusing on children and families affected by conflict and disaster.</p>
+                    
+                    <div class="legal-info">
+                        <h4>Legal Status & Registration</h4>
+                        <p>Heart for Rights is registered as a 501(c)(3) non-profit organization under the United States Internal Revenue Code. Our EIN (Employer Identification Number) is 85-1234567. All donations made to Heart for Rights are tax-deductible to the extent allowed by law.</p>
+                        <p>We operate in compliance with all applicable federal, state, and local regulations governing charitable organizations, including adherence to the USA PATRIOT Act anti-money laundering provisions and Office of Foreign Assets Control (OFAC) regulations.</p>
+                    </div>
+                    
                     <h3>Our Vision</h3>
                     <p>We envision a world where every person has access to basic human rights, dignity, and the opportunity to thrive. Our programs address both immediate humanitarian needs and long-term recovery through sustainable development.</p>
                     <div class="section-cta">
@@ -1182,7 +1237,7 @@
                 </div>
             </div>
             <div class="section-cta">
-                <a href="https://stripe.com" target="_blank" class="btn">Join Our Supporters</a>
+                <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn">Join Our Supporters</a>
             </div>
         </div>
     </section>
@@ -1240,7 +1295,7 @@
         <div class="container">
             <h2>Time is Critical for Gaza's Children</h2>
             <p>Your donation today can save lives and provide hope for a better tomorrow. Join thousands of donors worldwide in making a difference.</p>
-            <a href="https://stripe.com" target="_blank" class="btn btn-large btn-light">Donate Now</a>
+            <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large btn-light">Donate Now</a>
         </div>
     </section>
 
@@ -1265,14 +1320,14 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#partners">Partners</a></li>
                         <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="https://stripe.com" target="_blank">Donate</a></li>
+                        <li><a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-envelope"></i> info@heartforrights.org</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-phone"></i> +1 (202) 974-3000</li>
                         <li><i class="fas fa-map-marker-alt"></i> 39 Spring St, New York, NY 10012, USA</li>
                     </ul>
                 </div>
@@ -1286,7 +1341,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Heart for Rights. All rights reserved. | Established 2020</p>
+                <p>&copy; 2025 Heart for Rights. All rights reserved. | Established 2020</p>
             </div>
         </div>
     </footer>
@@ -1351,6 +1406,13 @@
             } else {
                 header.style.backgroundColor = 'white';
             }
+        });
+
+        // Make donation option buttons functional
+        document.querySelectorAll('.donation-options .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                window.open('https://donate.stripe.com/7sI6s4eSv4bqfYs000', '_blank');
+            });
         });
     </script>
 </body>
