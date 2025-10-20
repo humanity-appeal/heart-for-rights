@@ -307,9 +307,9 @@
             text-decoration: underline;
         }
         
-        /* Hero Section */
+        /* Hero Section - Minimal Overlay */
         .hero {
-            background: linear-gradient(rgba(0, 122, 77, 0.8), rgba(0, 122, 77, 0.9)), url('images/hero-bg.jpg');
+            background: linear-gradient(rgba(0, 122, 77, 0.3), rgba(0, 122, 77, 0.4)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -320,10 +320,24 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
         }
         
         .hero-content {
             width: 100%;
+            position: relative;
+            z-index: 2;
         }
         
         .hero h1 {
@@ -331,6 +345,7 @@
             margin-bottom: 25px;
             line-height: 1.2;
             font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
         .hero p {
@@ -338,6 +353,7 @@
             max-width: 800px;
             margin: 0 auto 40px;
             line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         .hero-buttons {
@@ -430,26 +446,40 @@
             color: var(--palestine-black);
         }
         
-        /* Emergency CTA Banner */
+        /* Emergency CTA Banner - More Transparent */
         .emergency-cta {
-            background: linear-gradient(rgba(206, 17, 38, 0.8), rgba(206, 17, 38, 0.9)), url('images/emergency-cta-bg.jpg');
+            background: linear-gradient(rgba(206, 17, 38, 0.6), rgba(206, 17, 38, 0.7)), url('images/emergency-cta-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             color: white;
             padding: 80px 0;
             text-align: center;
+            position: relative;
+        }
+        
+        .emergency-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
         }
         
         .emergency-cta-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .emergency-cta h3 {
             font-size: 2.2rem;
             margin-bottom: 25px;
             font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
         .emergency-cta p {
@@ -459,6 +489,7 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         /* Impact Section */
@@ -795,21 +826,38 @@
             transform: rotate(180deg);
         }
         
-        /* CTA Section */
+        /* CTA Section - More Transparent */
         .cta {
-            background: linear-gradient(rgba(0, 122, 77, 0.8), rgba(0, 122, 77, 0.9)), url('images/cta-bg.jpg');
+            background: linear-gradient(rgba(0, 122, 77, 0.6), rgba(0, 122, 77, 0.7)), url('images/cta-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             color: white;
             text-align: center;
             padding: 120px 0;
+            position: relative;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
         }
         
         .cta h2 {
             font-size: 2.8rem;
             margin-bottom: 25px;
             font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
         
         .cta p {
@@ -817,6 +865,7 @@
             max-width: 800px;
             margin: 0 auto 40px;
             line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
         /* Footer */
@@ -1463,9 +1512,11 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Time is Critical for Gaza's Children</h2>
-            <p>Your donation today can save lives and provide hope for a better tomorrow. Join thousands of donors worldwide in making a difference through Hope for Gaza Foundation.</p>
-            <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large btn-light">Donate Now</a>
+            <div class="cta-content">
+                <h2>Time is Critical for Gaza's Children</h2>
+                <p>Your donation today can save lives and provide hope for a better tomorrow. Join thousands of donors worldwide in making a difference through Hope for Gaza Foundation.</p>
+                <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large btn-light">Donate Now</a>
+            </div>
         </div>
     </section>
 
