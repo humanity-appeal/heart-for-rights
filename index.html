@@ -177,37 +177,6 @@
             cursor: pointer;
         }
         
-        /* Sticky Donate Button */
-        .sticky-donate {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            animation: pulse 2s infinite;
-        }
-        
-        .sticky-donate .btn {
-            padding: 15px 25px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            }
-        }
-        
         /* Cloudflare Human Verification Loader */
         #cloudflare-verification {
             position: fixed;
@@ -307,9 +276,9 @@
             text-decoration: underline;
         }
         
-        /* Hero Section - Minimal Overlay */
+        /* Hero Section - Black Overlay */
         .hero {
-            background: linear-gradient(rgba(0, 122, 77, 0.3), rgba(0, 122, 77, 0.4)), url('images/hero-bg.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -321,17 +290,6 @@
             display: flex;
             align-items: center;
             position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
-            z-index: 1;
         }
         
         .hero-content {
@@ -446,9 +404,9 @@
             color: var(--palestine-black);
         }
         
-        /* Emergency CTA Banner - More Transparent */
+        /* Emergency CTA Banner - Green Overlay */
         .emergency-cta {
-            background: linear-gradient(rgba(206, 17, 38, 0.6), rgba(206, 17, 38, 0.7)), url('images/emergency-cta-bg.jpg');
+            background: linear-gradient(rgba(0, 122, 77, 0.6), rgba(0, 122, 77, 0.7)), url('images/emergency-cta-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -456,16 +414,6 @@
             padding: 80px 0;
             text-align: center;
             position: relative;
-        }
-        
-        .emergency-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
         }
         
         .emergency-cta-content {
@@ -826,7 +774,7 @@
             transform: rotate(180deg);
         }
         
-        /* CTA Section - More Transparent */
+        /* CTA Section - Green Overlay */
         .cta {
             background: linear-gradient(rgba(0, 122, 77, 0.6), rgba(0, 122, 77, 0.7)), url('images/cta-bg.jpg');
             background-size: cover;
@@ -836,16 +784,6 @@
             text-align: center;
             padding: 120px 0;
             position: relative;
-        }
-        
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.1);
         }
         
         .cta-content {
@@ -962,11 +900,6 @@
             .donation-card.featured {
                 transform: scale(1);
             }
-            
-            .sticky-donate {
-                bottom: 20px;
-                right: 20px;
-            }
         }
         
         @media (max-width: 768px) {
@@ -1044,11 +977,6 @@
                 font-size: 1.1rem;
             }
             
-            .sticky-donate .btn {
-                padding: 12px 20px;
-                font-size: 1rem;
-            }
-            
             .cloudflare-challenge {
                 padding: 30px 20px;
                 margin: 20px;
@@ -1092,11 +1020,6 @@
             
             .cta h2 {
                 font-size: 2rem;
-            }
-            
-            .sticky-donate {
-                bottom: 15px;
-                right: 15px;
             }
             
             .logo {
@@ -1161,11 +1084,6 @@
             </ul>
         </div>
     </header>
-
-    <!-- Sticky Donate Button -->
-    <div class="sticky-donate">
-        <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large">Donate Now</a>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
