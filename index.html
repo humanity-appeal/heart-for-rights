@@ -211,7 +211,7 @@
             }
         }
         
-        /* Exact Cloudflare Human Verification Loader */
+        /* UPDATED: Cloudflare Human Verification Loader with Logo Space */
         #cloudflare-verification {
             position: fixed;
             top: 0;
@@ -238,11 +238,43 @@
         
         .cloudflare-logo {
             margin-bottom: 30px;
+            width: 200px;
+            height: 100px;
+            margin: 0 auto 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
         }
         
-        .cloudflare-logo svg {
-            width: 80px;
-            height: 80px;
+        .cloudflare-logo-placeholder {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 0 1rem;
+        }
+        
+        .cloudflare-logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
         }
         
         .cloudflare-title {
@@ -996,6 +1028,11 @@
                 padding: 30px 20px;
                 margin: 20px;
             }
+            
+            .cloudflare-logo {
+                width: 180px;
+                height: 90px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1045,9 +1082,9 @@
                 max-width: 150px;
             }
             
-            .cloudflare-logo svg {
-                width: 60px;
-                height: 60px;
+            .cloudflare-logo {
+                width: 160px;
+                height: 80px;
             }
             
             .cloudflare-title {
@@ -1061,17 +1098,14 @@
     </style>
 </head>
 <body>
-    <!-- Exact Cloudflare Human Verification Loader -->
+    <!-- UPDATED: Cloudflare Human Verification Loader with Logo Space -->
     <div id="cloudflare-verification">
         <div class="cloudflare-challenge">
             <div class="cloudflare-logo">
-                <!-- Exact Cloudflare Logo -->
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="45" fill="#f38020"/>
-                    <path d="M50 20 L75 80 L25 80 Z" fill="white"/>
-                    <circle cx="50" cy="50" r="15" fill="#f38020"/>
-                    <circle cx="50" cy="50" r="10" fill="white"/>
-                </svg>
+                <div class="cloudflare-logo-placeholder">
+                    Cloudflare Logo Space<br>
+                    <small>Upload logo to /images folder</small>
+                </div>
             </div>
             <h1 class="cloudflare-title">Checking if the site connection is secure</h1>
             <p class="cloudflare-subtitle">
