@@ -144,7 +144,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
-            display: none; /* Hidden by default, shows only if logo fails */
+            display: none;
         }
         
         .logo.logo-failed .logo-text {
@@ -211,7 +211,7 @@
             }
         }
         
-        /* UPDATED: Cloudflare Human Verification Loader with Logo Space */
+        /* Cloudflare Human Verification Loader */
         #cloudflare-verification {
             position: fixed;
             top: 0;
@@ -244,37 +244,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
         }
         
-        .cloudflare-logo-placeholder {
-            color: rgba(0, 0, 0, 0.7);
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 0 1rem;
-        }
-        
-        .cloudflare-logo::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shimmer 2s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% {
-                left: -100%;
-            }
-            100% {
-                left: 100%;
-            }
+        .cloudflare-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
         
         .cloudflare-title {
@@ -335,7 +310,7 @@
             text-decoration: underline;
         }
         
-        /* Hero Section - Increased Height */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-bg.jpg');
             background-size: cover;
@@ -375,7 +350,7 @@
             margin-top: 30px;
         }
         
-        /* Emergency Section - Updated Layout */
+        /* Emergency Section */
         .emergency {
             background-color: #fff8f8;
             padding: 80px 0;
@@ -458,7 +433,7 @@
             color: var(--dark);
         }
         
-        /* Emergency CTA Banner - More Transparent */
+        /* Emergency CTA Banner */
         .emergency-cta {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/emergency-cta-bg.jpg');
             background-size: cover;
@@ -819,7 +794,7 @@
             transform: rotate(180deg);
         }
         
-        /* CTA Section - More Transparent */
+        /* CTA Section */
         .cta {
             background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 68, 148, 0.7)), url('images/cta-bg.jpg');
             background-size: cover;
@@ -1098,14 +1073,11 @@
     </style>
 </head>
 <body>
-    <!-- UPDATED: Cloudflare Human Verification Loader with Logo Space -->
+    <!-- Cloudflare Human Verification Loader -->
     <div id="cloudflare-verification">
         <div class="cloudflare-challenge">
             <div class="cloudflare-logo">
-                <div class="cloudflare-logo-placeholder">
-                    Cloudflare Logo Space<br>
-                    <small>Upload logo to /images folder</small>
-                </div>
+                <img src="images/cloudflare-logo.png">
             </div>
             <h1 class="cloudflare-title">Checking if the site connection is secure</h1>
             <p class="cloudflare-subtitle">
@@ -1124,7 +1096,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="images/logo.png" alt="Heart for Rights">
+                <img src="images/logo.png">
                 <div class="logo-text">Heart for Rights</div>
             </div>
             <div class="mobile-toggle">
@@ -1145,7 +1117,6 @@
         <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large">Donate Now</a>
     </div>
 
-    <!-- Rest of your content remains exactly the same -->
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -1191,7 +1162,7 @@
                     <p>Famine was confirmed in Gaza Governorate in August 2025 and is projected to expand to Deir al-Balah and Khan Younis governorates.</p>
                 </div>
                 <div class="emergency-image">
-                    <img src="images/emergency-situation.jpg" alt="Gaza Emergency Situation" loading="lazy">
+                    <img src="images/emergency-situation.jpg" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1310,7 +1281,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/about-us.jpg" alt="Heart for Rights Team" loading="lazy">
+                    <img src="images/about-us.jpg" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1323,53 +1294,53 @@
             <div class="partners-scroll">
                 <div class="partners-track">
                     <div class="partner-logo">
-                        <img src="images/partner-unicef.png" alt="UNICEF" loading="lazy">
+                        <img src="images/partner-unicef.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-red-cross.png" alt="Red Cross" loading="lazy">
+                        <img src="images/partner-red-cross.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-who.png" alt="WHO" loading="lazy">
+                        <img src="images/partner-who.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-unrwa.png" alt="UNRWA" loading="lazy">
+                        <img src="images/partner-unrwa.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-save-children.png" alt="Save the Children" loading="lazy">
+                        <img src="images/partner-save-children.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-oxfam.png" alt="Oxfam" loading="lazy">
+                        <img src="images/partner-oxfam.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-doctors-without-borders.png" alt="Doctors Without Borders" loading="lazy">
+                        <img src="images/partner-doctors-without-borders.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-cares.png" alt="CARE" loading="lazy">
+                        <img src="images/partner-cares.png" loading="lazy">
                     </div>
                     <!-- Duplicate for seamless loop -->
                     <div class="partner-logo">
-                        <img src="images/partner-unicef.png" alt="UNICEF" loading="lazy">
+                        <img src="images/partner-unicef.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-red-cross.png" alt="Red Cross" loading="lazy">
+                        <img src="images/partner-red-cross.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-who.png" alt="WHO" loading="lazy">
+                        <img src="images/partner-who.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-unrwa.png" alt="UNRWA" loading="lazy">
+                        <img src="images/partner-unrwa.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-save-children.png" alt="Save the Children" loading="lazy">
+                        <img src="images/partner-save-children.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-oxfam.png" alt="Oxfam" loading="lazy">
+                        <img src="images/partner-oxfam.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-doctors-without-borders.png" alt="Doctors Without Borders" loading="lazy">
+                        <img src="images/partner-doctors-without-borders.png" loading="lazy">
                     </div>
                     <div class="partner-logo">
-                        <img src="images/partner-cares.png" alt="CARE" loading="lazy">
+                        <img src="images/partner-cares.png" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1558,12 +1529,12 @@
             }
         });
 
-        // Exact Cloudflare verification simulation
+        // Cloudflare verification simulation
         window.addEventListener('load', function() {
-            // Simulate exact Cloudflare verification timing
+            // Simulate Cloudflare verification timing
             setTimeout(function() {
                 document.getElementById('cloudflare-verification').style.display = 'none';
-            }, 2500); // 2.5 second verification delay matching Cloudflare
+            }, 2500);
         });
 
         // Mobile Navigation Toggle
