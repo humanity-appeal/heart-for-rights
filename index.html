@@ -1087,8 +1087,8 @@
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#impact">Our Impact</a></li>
                 <li><a href="#activities">Our Activities</a></li>
+                <li><a href="#donate">Donate</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn">Donate Now</a></li>
             </ul>
         </div>
     </header>
@@ -1100,8 +1100,7 @@
                 <h1>Emergency Relief for Gaza's Children</h1>
                 <p>Hope for Gaza Foundation is providing critical aid to children and families facing unimaginable hardship. Your support brings food, medical care, and hope to those who need it most.</p>
                 <div class="hero-buttons">
-                    <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large btn-light">Donate Now</a>
-                    <a href="#impact" class="btn btn-large btn-red">See Our Impact</a>
+                    <a href="#donate" class="btn btn-large btn-light">Donate Now</a>
                 </div>
             </div>
         </div>
@@ -1154,7 +1153,7 @@
             <div class="emergency-cta-content">
                 <h3>Urgent Action Needed Now</h3>
                 <p>Your immediate support can save lives and provide critical aid to children and families facing starvation in Gaza.</p>
-                <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large btn-light">Donate to Save Lives</a>
+                <a href="#donate" class="btn btn-large btn-light">Donate to Save Lives</a>
             </div>
         </div>
     </section>
@@ -1200,7 +1199,7 @@
     </section>
 
     <!-- Donation Options Section -->
-    <section class="donation-options">
+    <section class="donation-options" id="donate">
         <div class="container">
             <div class="section-title">
                 <h2>Make a Difference Today</h2>
@@ -1208,22 +1207,22 @@
             </div>
             <div class="donation-cards">
                 <div class="donation-card">
-                    <h3>Emergency Food</h3>
+                    <h3>Medical Kit</h3>
                     <div class="donation-amount">$50</div>
-                    <p class="donation-description">Provides a family with essential food supplies for two weeks.</p>
-                    <button class="btn">Donate Now</button>
+                    <p class="donation-description">Supplies a medical kit to treat injured children in Gaza.</p>
+                    <button class="btn donation-btn" data-amount="50">Donate Now</button>
                 </div>
                 <div class="donation-card featured">
-                    <h3>Medical Kit</h3>
+                    <h3>Emergency Food</h3>
                     <div class="donation-amount">$100</div>
-                    <p class="donation-description">Supplies a medical kit to treat injured children in Gaza.</p>
-                    <button class="btn">Donate Now</button>
+                    <p class="donation-description">Provides a family with essential food supplies for two weeks.</p>
+                    <button class="btn donation-btn" data-amount="100">Donate Now</button>
                 </div>
                 <div class="donation-card">
-                    <h3>Education Support</h3>
+                    <h3>Family Shelter</h3>
                     <div class="donation-amount">$250</div>
-                    <p class="donation-description">Funds educational materials and psychological support for 10 children.</p>
-                    <button class="btn">Donate Now</button>
+                    <p class="donation-description">Provides safe shelter and basic necessities for a displaced family.</p>
+                    <button class="btn donation-btn" data-amount="250">Donate Now</button>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
@@ -1462,7 +1461,7 @@
             <div class="cta-content">
                 <h2>Time is Critical for Gaza's Children</h2>
                 <p>Your donation today can save lives and provide hope for a better tomorrow. Join thousands of donors worldwide in making a difference through Hope for Gaza Foundation.</p>
-                <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large btn-light">Donate Now</a>
+                <a href="#donate" class="btn btn-large btn-light">Donate Now</a>
             </div>
         </div>
     </section>
@@ -1488,8 +1487,8 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#impact">Our Impact</a></li>
                         <li><a href="#activities">Our Activities</a></li>
+                        <li><a href="#donate">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1602,10 +1601,14 @@
             }
         });
 
-        // Make donation option buttons functional
-        document.querySelectorAll('.donation-options .btn').forEach(button => {
+        // Donation button functionality - scroll to donation section
+        document.querySelectorAll('.donation-btn').forEach(button => {
             button.addEventListener('click', function() {
-                window.open('https://donate.stripe.com/7sI6s4eSv4bqfYs000', '_blank');
+                // For now, just scroll to donation section
+                // Later these will be connected to specific Stripe links
+                document.getElementById('donate').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
             });
         });
     </script>
