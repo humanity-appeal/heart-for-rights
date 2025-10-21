@@ -127,18 +127,18 @@
         .logo {
             display: flex;
             align-items: center;
-            height: 50px;
+            height: 75px; /* Increased by 150% from 50px */
         }
         
         .logo img {
             height: 100%;
             width: auto;
-            max-width: 200px;
+            max-width: 300px; /* Increased from 200px */
             object-fit: contain;
         }
         
         .logo-text {
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increased from 1.5rem */
             font-weight: 700;
             color: var(--palestine-green);
             display: none;
@@ -276,9 +276,9 @@
             text-decoration: underline;
         }
         
-        /* Hero Section - Black Overlay */
+        /* Hero Section - Minimal Overlay */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -670,61 +670,60 @@
             color: var(--palestine-green);
         }
         
-        /* Testimonials */
-        .testimonials {
+        /* Activities Section - Replaced Testimonials */
+        .activities {
             background-color: white;
         }
         
-        .testimonials-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .testimonials-grid {
+        .activities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
         
-        .testimonial {
+        .activity-card {
             background-color: white;
-            padding: 30px;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            border-top: 4px solid var(--palestine-green);
+            transition: transform 0.3s ease;
         }
         
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
+        .activity-card:hover {
+            transform: translateY(-5px);
         }
         
-        .testimonial-text::before,
-        .testimonial-text::after {
-            content: """;
-            font-size: 3rem;
+        .activity-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .activity-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .activity-card:hover .activity-image img {
+            transform: scale(1.05);
+        }
+        
+        .activity-content {
+            padding: 25px;
+        }
+        
+        .activity-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             color: var(--palestine-green);
-            opacity: 0.2;
-            position: absolute;
         }
         
-        .testimonial-text::before {
-            top: -15px;
-            left: -10px;
-        }
-        
-        .testimonial-text::after {
-            bottom: -40px;
-            right: -10px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--palestine-green);
+        .activity-content p {
+            color: var(--gray);
+            line-height: 1.6;
         }
         
         /* FAQ Section */
@@ -909,7 +908,7 @@
             
             .nav-menu {
                 position: fixed;
-                top: 70px;
+                top: 95px; /* Adjusted for larger logo */
                 left: 0;
                 width: 100%;
                 background-color: white;
@@ -957,7 +956,7 @@
                 max-width: 300px;
             }
             
-            .testimonials-grid {
+            .activities-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -985,6 +984,14 @@
             .cloudflare-logo {
                 width: 180px;
                 height: 90px;
+            }
+            
+            .logo {
+                height: 60px; /* Adjusted for mobile */
+            }
+            
+            .logo img {
+                max-width: 200px; /* Adjusted for mobile */
             }
         }
         
@@ -1023,11 +1030,11 @@
             }
             
             .logo {
-                height: 40px;
+                height: 50px; /* Adjusted for small mobile */
             }
             
             .logo img {
-                max-width: 150px;
+                max-width: 180px; /* Adjusted for small mobile */
             }
             
             .cloudflare-logo {
@@ -1079,6 +1086,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#impact">Our Impact</a></li>
+                <li><a href="#activities">Our Activities</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn">Donate Now</a></li>
             </ul>
@@ -1352,29 +1360,50 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
+    <!-- Activities Section - Replaced Testimonials -->
+    <section class="section activities" id="activities">
         <div class="container">
             <div class="section-title">
-                <h2>Donor Stories</h2>
-                <p>Hear from people around the world who have supported Hope for Gaza Foundation's mission.</p>
+                <h2>Our Activities in Gaza</h2>
+                <p>See how Hope for Gaza Foundation is making a difference on the ground through our humanitarian efforts.</p>
             </div>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">I was hesitant at first, but after seeing the detailed reports of how my donation was used in Gaza, I feel confident supporting Hope for Gaza Foundation. Knowing that children are receiving food and medical care because of my contribution is incredibly rewarding.</p>
-                    <p class="testimonial-author">- Sarah Johnson, UK</p>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="images/activity-food-distribution.jpg" alt="Food Distribution" loading="lazy">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Emergency Food Distribution</h3>
+                        <p>Our teams distribute nutritious food packages to families in need across Gaza, providing essential sustenance during this critical time.</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">As a pediatrician, I understand the critical importance of nutrition for child development. Hope for Gaza Foundation is doing essential work in Gaza, and I'm proud to support their efforts to save children's lives.</p>
-                    <p class="testimonial-author">- Dr. Michael Chen, USA</p>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="images/activity-medical-aid.jpg" alt="Medical Aid" loading="lazy">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Medical Assistance</h3>
+                        <p>We provide essential medical supplies and support to local clinics, helping treat injured children and families affected by the conflict.</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">The transparency and regular updates from Hope for Gaza Foundation give me confidence that my donations are making a real difference. I've been a monthly donor for six months and will continue supporting their vital work in Gaza.</p>
-                    <p class="testimonial-author">- Emma Rodriguez, Canada</p>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="images/activity-shelter-support.jpg" alt="Shelter Support" loading="lazy">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Shelter & Protection</h3>
+                        <p>Our organization helps provide safe spaces and temporary shelters for displaced families who have lost their homes in the conflict.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="section-cta">
-                <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn">Join Our Supporters</a>
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="images/activity-education.jpg" alt="Education Support" loading="lazy">
+                    </div>
+                    <div class="activity-content">
+                        <h3>Education & Trauma Support</h3>
+                        <p>We support educational programs and provide psychological assistance to help children cope with trauma and continue their learning.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1458,6 +1487,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#activities">Our Activities</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank">Donate</a></li>
                     </ul>
@@ -1555,7 +1585,7 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 70,
+                        top: targetElement.offsetTop - 95, // Adjusted for larger logo
                         behavior: 'smooth'
                     });
                 }
