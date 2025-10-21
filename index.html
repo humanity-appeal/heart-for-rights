@@ -7,6 +7,7 @@
     <title>Hope for Gaza Foundation - Emergency Relief for Gaza's Children</title>
     <link rel="preload" href="images/hero-bg.jpg" as="image">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
         /* CSS Variables - Palestine Flag Colors */
         :root {
@@ -18,6 +19,13 @@
             --gray: #6c757d;
         }
         
+        /* Font Variables */
+        :root {
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+            --font-buttons: 'Poppins', sans-serif;
+        }
+        
         /* Base Styles */
         * {
             margin: 0;
@@ -26,7 +34,7 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font-body);
             line-height: 1.6;
             color: var(--palestine-black);
             background-color: var(--palestine-white);
@@ -51,7 +59,10 @@
             color: var(--palestine-white);
             border: none;
             border-radius: 4px;
-            font-weight: 600;
+            font-family: var(--font-buttons);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
@@ -97,6 +108,7 @@
         
         .section-title h2 {
             font-size: 2.2rem;
+            font-family: var(--font-heading);
             color: var(--palestine-green);
             margin-bottom: 15px;
         }
@@ -127,18 +139,19 @@
         .logo {
             display: flex;
             align-items: center;
-            height: 75px; /* Increased by 150% from 50px */
+            height: 75px;
+            cursor: pointer;
         }
         
         .logo img {
             height: 100%;
             width: auto;
-            max-width: 300px; /* Increased from 200px */
+            max-width: 300px;
             object-fit: contain;
         }
         
         .logo-text {
-            font-size: 1.8rem; /* Increased from 1.5rem */
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--palestine-green);
             display: none;
@@ -283,12 +296,11 @@
             background-position: center;
             background-repeat: no-repeat;
             color: var(--palestine-white);
-            text-align: center;
             padding: 220px 0 120px;
             margin-top: 70px;
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             position: relative;
         }
         
@@ -296,29 +308,34 @@
             width: 100%;
             position: relative;
             z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 60px;
+        }
+        
+        .hero-text {
+            max-width: 50%;
         }
         
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 25px;
+            font-family: var(--font-heading);
             line-height: 1.2;
-            font-weight: 700;
+            font-weight: 800;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
         }
         
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-family: var(--font-body);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            font-weight: 600;
         }
         
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
+        .hero-button {
+            margin-left: 20px;
         }
         
         /* Emergency Section */
@@ -334,6 +351,7 @@
         
         .emergency-header h2 {
             font-size: 2.5rem;
+            font-family: var(--font-heading);
             color: var(--palestine-red);
             margin-bottom: 20px;
             font-weight: 700;
@@ -369,6 +387,7 @@
         
         .emergency-text h3 {
             font-size: 1.8rem;
+            font-family: var(--font-heading);
             color: var(--palestine-red);
             margin: 25px 0 15px;
         }
@@ -425,6 +444,7 @@
         
         .emergency-cta h3 {
             font-size: 2.2rem;
+            font-family: var(--font-heading);
             margin-bottom: 25px;
             font-weight: 700;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
@@ -474,6 +494,7 @@
         
         .impact-card h3 {
             font-size: 1.5rem;
+            font-family: var(--font-heading);
             margin-bottom: 15px;
             color: var(--palestine-green);
         }
@@ -566,6 +587,7 @@
         
         .about-text h3 {
             font-size: 1.8rem;
+            font-family: var(--font-heading);
             margin-bottom: 20px;
             color: var(--palestine-green);
         }
@@ -598,6 +620,7 @@
             text-align: center;
             margin-bottom: 40px;
             color: var(--palestine-green);
+            font-family: var(--font-heading);
         }
         
         .partners-scroll {
@@ -668,6 +691,7 @@
         .transparency-item h3 {
             margin-bottom: 15px;
             color: var(--palestine-green);
+            font-family: var(--font-heading);
         }
         
         /* Activities Section - Replaced Testimonials */
@@ -717,6 +741,7 @@
         
         .activity-content h3 {
             font-size: 1.4rem;
+            font-family: var(--font-heading);
             margin-bottom: 12px;
             color: var(--palestine-green);
         }
@@ -792,6 +817,7 @@
         
         .cta h2 {
             font-size: 2.8rem;
+            font-family: var(--font-heading);
             margin-bottom: 25px;
             font-weight: 700;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
@@ -942,13 +968,18 @@
                 font-size: 2.5rem;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .hero-content {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
+            .hero-text {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .hero-button {
+                margin-left: 0;
             }
             
             .btn {
@@ -1003,6 +1034,10 @@
             
             .hero h1 {
                 font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
             
             .section {
@@ -1075,7 +1110,7 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">
+            <div class="logo" onclick="scrollToHero()">
                 <img src="images/logo.png">
                 <div class="logo-text">Hope for Gaza Foundation</div>
             </div>
@@ -1084,11 +1119,11 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
                 <li><a href="#impact">Our Impact</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#activities">Our Activities</a></li>
-                <li><a href="#donate">Donate</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#donate" class="btn">DONATE</a></li>
             </ul>
         </div>
     </header>
@@ -1097,10 +1132,12 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Emergency Relief for Gaza's Children</h1>
-                <p>Hope for Gaza Foundation is providing critical aid to children and families facing unimaginable hardship. Your support brings food, medical care, and hope to those who need it most.</p>
-                <div class="hero-buttons">
-                    <a href="#donate" class="btn btn-large btn-light">Donate Now</a>
+                <div class="hero-text">
+                    <h1>Donate to Gaza</h1>
+                    <div class="hero-subtitle">Now is the time to act</div>
+                </div>
+                <div class="hero-button">
+                    <a href="#donate" class="btn btn-large">DONATE NOW</a>
                 </div>
             </div>
         </div>
@@ -1153,7 +1190,7 @@
             <div class="emergency-cta-content">
                 <h3>Urgent Action Needed Now</h3>
                 <p>Your immediate support can save lives and provide critical aid to children and families facing starvation in Gaza.</p>
-                <a href="#donate" class="btn btn-large btn-light">Donate to Save Lives</a>
+                <a href="#donate" class="btn btn-large btn-light">DONATE TO SAVE LIVES</a>
             </div>
         </div>
     </section>
@@ -1210,25 +1247,25 @@
                     <h3>Medical Kit</h3>
                     <div class="donation-amount">$50</div>
                     <p class="donation-description">Supplies a medical kit to treat injured children in Gaza.</p>
-                    <button class="btn donation-btn" data-amount="50">Donate Now</button>
+                    <button class="btn donation-btn" data-amount="50">DONATE NOW</button>
                 </div>
                 <div class="donation-card featured">
                     <h3>Emergency Food</h3>
                     <div class="donation-amount">$100</div>
                     <p class="donation-description">Provides a family with essential food supplies for two weeks.</p>
-                    <button class="btn donation-btn" data-amount="100">Donate Now</button>
+                    <button class="btn donation-btn" data-amount="100">DONATE NOW</button>
                 </div>
                 <div class="donation-card">
                     <h3>Family Shelter</h3>
                     <div class="donation-amount">$250</div>
                     <p class="donation-description">Provides safe shelter and basic necessities for a displaced family.</p>
-                    <button class="btn donation-btn" data-amount="250">Donate Now</button>
+                    <button class="btn donation-btn" data-amount="250">DONATE NOW</button>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
                 <p>Or make a custom donation:</p>
                 <div style="margin-top: 20px;">
-                    <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large">Make a Custom Donation</a>
+                    <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large">MAKE A CUSTOM DONATION</a>
                 </div>
             </div>
         </div>
@@ -1256,7 +1293,7 @@
                     <h3>Our Vision</h3>
                     <p>We envision a future where every child in Gaza has access to basic human rights, dignity, safety, and the opportunity to thrive. Our programs address both immediate humanitarian needs and support long-term recovery through sustainable development initiatives.</p>
                     <div class="section-cta">
-                        <a href="#contact" class="btn">Contact Us</a>
+                        <a href="#contact" class="btn">CONTACT US</a>
                     </div>
                 </div>
                 <div class="about-image">
@@ -1461,7 +1498,7 @@
             <div class="cta-content">
                 <h2>Time is Critical for Gaza's Children</h2>
                 <p>Your donation today can save lives and provide hope for a better tomorrow. Join thousands of donors worldwide in making a difference through Hope for Gaza Foundation.</p>
-                <a href="#donate" class="btn btn-large btn-light">Donate Now</a>
+                <a href="#donate" class="btn btn-large btn-light">DONATE NOW</a>
             </div>
         </div>
     </section>
@@ -1484,11 +1521,11 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
                         <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#activities">Our Activities</a></li>
-                        <li><a href="#donate">Donate</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="#donate">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1504,7 +1541,7 @@
                     <p>Subscribe to receive updates on our work and impact in Gaza.</p>
                     <div style="display: flex; margin-top: 15px;">
                         <input type="email" placeholder="Your email" style="padding: 10px; border: none; border-radius: 4px 0 0 4px; flex: 1;">
-                        <button class="btn" style="border-radius: 0 4px 4px 0;">Subscribe</button>
+                        <button class="btn" style="border-radius: 0 4px 4px 0;">SUBSCRIBE</button>
                     </div>
                 </div>
             </div>
@@ -1515,6 +1552,13 @@
     </footer>
 
     <script>
+        // Logo click handler - scroll to hero section
+        function scrollToHero() {
+            document.getElementById('home').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
         // Logo error handling
         document.addEventListener('DOMContentLoaded', function() {
             const logoImg = document.querySelector('.logo img');
