@@ -1126,19 +1126,19 @@
                     <h3>Medical Kit</h3>
                     <div class="donation-amount">$50</div>
                     <p class="donation-description">Supplies a medical kit to treat injured children in Gaza.</p>
-                    <button class="btn donation-btn" data-amount="50">DONATE NOW</button>
+                    <a href="https://donate.stripe.com/fZuaEWarO2ddcj24oGbEA01" target="_blank" class="btn">DONATE NOW</a>
                 </div>
                 <div class="donation-card featured">
                     <h3>Emergency Food</h3>
                     <div class="donation-amount">$100</div>
                     <p class="donation-description">Provides a family with essential food supplies for two weeks.</p>
-                    <button class="btn donation-btn" data-amount="100">DONATE NOW</button>
+                    <a href="https://donate.stripe.com/dRm00i9nKbNNbeY9J0bEA02" target="_blank" class="btn">DONATE NOW</a>
                 </div>
                 <div class="donation-card">
                     <h3>Family Shelter</h3>
                     <div class="donation-amount">$250</div>
                     <p class="donation-description">Provides safe shelter and basic necessities for a displaced family.</p>
-                    <button class="btn donation-btn" data-amount="250">DONATE NOW</button>
+                    <a href="https://donate.stripe.com/28E8wOeI43hh3Mw1cubEA03" target="_blank" class="btn">DONATE NOW</a>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
@@ -1514,17 +1514,6 @@
             } else {
                 header.style.backgroundColor = 'white';
             }
-        });
-
-        // Donation button functionality - scroll to donation section
-        document.querySelectorAll('.donation-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                // For now, just scroll to donation section
-                // Later these will be connected to specific Stripe links
-                document.getElementById('donate').scrollIntoView({ 
-                    behavior: 'smooth' 
-                });
-            });
         });
     </script>
 </body>
