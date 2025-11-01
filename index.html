@@ -989,7 +989,7 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo" onclick="scrollToHero()">
+            <div class="logo" onclick="window.location.href='https://hope-for-gaza.github.io/en/'">
                 <img src="images/logo.png">
                 <div class="logo-text">Hope for Gaza Foundation</div>
             </div>
@@ -1016,7 +1016,7 @@
                     <div class="hero-subtitle">Now is the time to act</div>
                 </div>
                 <div class="hero-button">
-                    <a href="#donate" class="btn btn-large">DONATE NOW</a>
+                    <a href="https://hope-for-gaza.github.io/donate/" class="btn btn-large" onclick="trackDonationClick('hero_button')">DONATE NOW</a>
                 </div>
             </div>
         </div>
@@ -1069,7 +1069,7 @@
             <div class="emergency-cta-content">
                 <h3>Urgent Action Needed Now</h3>
                 <p>Your immediate support can save lives and provide critical aid to children and families facing starvation in Gaza.</p>
-                <a href="#donate" class="btn btn-large btn-light">DONATE TO SAVE LIVES</a>
+                <a href="https://hope-for-gaza.github.io/donate/" class="btn btn-large btn-light" onclick="trackDonationClick('emergency_cta_button')">DONATE TO SAVE LIVES</a>
             </div>
         </div>
     </section>
@@ -1126,25 +1126,25 @@
                     <h3>Medical Kit</h3>
                     <div class="donation-amount">$50</div>
                     <p class="donation-description">Supplies a medical kit to treat injured children in Gaza.</p>
-                    <a href="https://donate.stripe.com/fZuaEWarO2ddcj24oGbEA01" target="_blank" class="btn">DONATE NOW</a>
+                    <a href="https://hope-for-gaza.github.io/donate/?amount=50&source=medical_kit_button" class="btn" onclick="trackDonationClick('medical_kit_button')">DONATE NOW</a>
                 </div>
                 <div class="donation-card featured">
                     <h3>Emergency Food</h3>
                     <div class="donation-amount">$100</div>
                     <p class="donation-description">Provides a family with essential food supplies for two weeks.</p>
-                    <a href="https://donate.stripe.com/dRm00i9nKbNNbeY9J0bEA02" target="_blank" class="btn">DONATE NOW</a>
+                    <a href="https://hope-for-gaza.github.io/donate/?amount=100&source=emergency_food_button" class="btn" onclick="trackDonationClick('emergency_food_button')">DONATE NOW</a>
                 </div>
                 <div class="donation-card">
                     <h3>Family Shelter</h3>
                     <div class="donation-amount">$250</div>
                     <p class="donation-description">Provides safe shelter and basic necessities for a displaced family.</p>
-                    <a href="https://donate.stripe.com/28E8wOeI43hh3Mw1cubEA03" target="_blank" class="btn">DONATE NOW</a>
+                    <a href="https://hope-for-gaza.github.io/donate/?amount=250&source=family_shelter_button" class="btn" onclick="trackDonationClick('family_shelter_button')">DONATE NOW</a>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
                 <p>Or make a custom donation:</p>
                 <div style="margin-top: 20px;">
-                    <a href="https://donate.stripe.com/7sI6s4eSv4bqfYs000" target="_blank" class="btn btn-large">MAKE A CUSTOM DONATION</a>
+                    <a href="https://hope-for-gaza.github.io/donate/?source=custom_donation_button" class="btn btn-large" onclick="trackDonationClick('custom_donation_button')">MAKE A CUSTOM DONATION</a>
                 </div>
             </div>
         </div>
@@ -1165,7 +1165,7 @@
                     
                     <div class="legal-info">
                         <h4>Legal Status & Registration</h4>
-                        <p>Hope for Gaza Foundation is registered as a 501(c)(3) non-profit organization under the United States Internal Revenue Code. Our EIN (Employer Identification Number) is 85-1234567. All donations made to Hope for Gaza Foundation are tax-deductible to the extent allowed by law.</p>
+                        <p>Hope for Gaza Foundation is registered as a 501(c)(3) non-profit organization under the United States Internal Revenue Code. Our EIN (Employer Identification Number) is 92-5629278. All donations made to Hope for Gaza Foundation are tax-deductible to the extent allowed by law.</p>
                         <p>We operate in compliance with all applicable federal, state, and local regulations governing charitable organizations, including adherence to the USA PATRIOT Act anti-money laundering provisions and Office of Foreign Assets Control (OFAC) regulations.</p>
                     </div>
                     
@@ -1515,6 +1515,33 @@
                 header.style.backgroundColor = 'white';
             }
         });
+
+        // Function to track donation button clicks
+        function trackDonationClick(buttonId) {
+            // Track the click with Histats
+            if (typeof _Hasync !== 'undefined') {
+                _Hasync.push(['Histats.track_hits', '']);
+            }
+            
+            // Store the button ID in sessionStorage for the donation page to use
+            sessionStorage.setItem('donationButtonClicked', buttonId);
+            
+            // Allow the default navigation to proceed
+            return true;
+        }
     </script>
+
+    <!-- Histats.com  START  (aync)-->
+    <script type="text/javascript">var _Hasync= _Hasync|| [];
+    _Hasync.push(['Histats.start', '1,4939105,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function() {
+    var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+    hs.src = ('//s10.histats.com/js15_as.js');
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+    })();</script>
+    <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4939105&101" alt="web page hit counter" border="0"></a></noscript>
+    <!-- Histats.com  END  -->
 </body>
 </html>
